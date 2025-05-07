@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --theme-bg: rgb(217, 235, 240);
+  --content-bg: hsl(252, 20%, 95%);
+  --text-color: rgb(24, 23, 23);
+  --button-color: rgb(253, 250, 250);
+  --toggle-bg: #ccc;
+  --toggle-button: hsl(252, 20%, 95%);
+  --button-shadow: rgb(189, 184, 184);
+  --card-shadow: rgb(194, 189, 189);
+  --Light-slider-color: #f11515;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--theme-bg);
+  font-family: "Noto Sans", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+}
+.container {
+  width: 90%;
+  max-width: 1080px;
+  margin: auto;
+  background: var(--theme-bg);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* -----------------------------------------------------------------------------------
+-----------------------------------BACKGROUND THEME-------------------------------- */
+.darkmode {
+  --theme-bg: rgb(8, 10, 32);
+  --content-bg: hsl(248, 16%, 20%);
+  --text-color: rgb(253, 250, 250);
+  --button-color: rgb(24, 23, 23);
+  --toggle-bg: #5f5f79;
+  --toggle-button: hsl(252, 20%, 95%);
+  --button-shadow: rgb(53, 50, 50);
+  --card-shadow: rgb(87, 86, 86);
+  --Light-slider-color: #f11515;
+}
+.Background-theme {
+  display: flex;
+  margin: 30px;
+  justify-content: space-between;
+  background-color: var(--content-bg);
+  border-radius: 10px;
+  box-shadow: 0 0 2px var(--card-shadow);
+}
+.Background-theme svg {
+  width: 120px;
+  margin: 5px 5px 5px 15px;
+}
+.text-logo {
+  fill: var(--text-color);
+}
+#theme-switch {
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  background-color: var(--theme-bg);
+  margin: 10px;
+  padding: 7px;
+  border-radius: 24%;
+  border: none;
+}
+#theme-switch img:last-child {
+  display: none;
+}
+.darkmode #theme-switch img:first-child {
+  display: none;
+}
+.darkmode #theme-switch img:last-child {
+  display: block;
+}
+.bg-theme-icon {
+  width: 1em;
+  height: 1em;
+}
+/* -----------------------------------------------------------------------------------
+-----------------------------------LIST MENU--------------------------------------- */
+.filter-list {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 20px 10px 30px;
+}
+.filter-list ul {
+  margin: 10px;
+  list-style: none;
+  word-spacing: 15px;
+}
+.filter-list li {
+  display: inline-block;
+  background-color: var(--content-bg);
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 15px;
+  line-height: 10px;
+}
+.filter-list h1 {
+  font-size: 1.2rem;
+}
+.btn {
+  box-shadow: 0 0 2px var(--button-shadow);
+}
+.btn:hover {
+  background-color: var(--toggle-bg);
+}
+.btn.active-btn {
+  background-color: var(--Light-slider-color);
+  color: var(--button-color);
+}
+/* -----------------------------------------------------------------------------------
+-----------------------------------CARD GROUP--------------------------------------- */
+.card-groups {
+  margin: 30px 30px 100px 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: first baseline;
+}
+.card {
+  /* flex-basis: 320px; */
+  height: 200px;
+  background-color: var(--content-bg);
+  border-radius: 14px;
+  box-shadow: 0 0 2px var(--card-shadow);
+}
+.card.hide {
+  display: none;
+}
+.list-card {
+  height: 120px;
+  display: flex;
+  margin: 10px;
+}
+.logo-card {
+  margin: 15px 5px;
+}
+.logo-card img {
+  width: 45px;
+}
+.text-card {
+  margin: 0 2px;
+}
+.text-card h2{
+  font-size: 1em;
+}
+.text-card p{
+  font-size: .8em;
+}
+.action-card {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px 10px;
+}
+.action-card button {
+  cursor: pointer;
+  margin: 4px;
+  width: 70px;
+  height: 30px;
+  background-color: var(--content-bg);
+  border: 1px var(--theme-bg) solid;
+  box-shadow: 0 0 2px var(--button-shadow);
+  border-radius: 20px;
+}
+.action-card button:hover {
+  background-color: var(--toggle-bg);
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 16px;
+}
+#switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 16px;
+}
+
+/* --------------------------toggle button-------------------------- */
+.slider.round {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  left: -30px;
+  right: 5px;
+  bottom: -15px;
+  border-radius: 34px;
+  background-color: var(--toggle-bg);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  border-radius: 50%;
+  background-color: var(--toggle-button);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider.round.active:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+}
+.slider.round.active {
+  background-color: var(--Light-slider-color);
+}
+.attribution {
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  .card-groups {
+    grid-template-columns: repeat(2, 1fr);
+    transition: 0.4s;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .container {
+    width: 100%;
+  }
+  .filter-list {
+    display: block;
+    transition: 0.4s;
+  }
+  .filter-list h1 {
+    text-align: center;
+  }
+  #list-btn {
+    text-align: center;
+  }
+  #list-btn ul > li {
+    margin: 0 30px 0 -25px;
+  }
+  .card-groups {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .filter-list ul {
+    word-spacing: 5px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #list-btn ul{
+    margin: 0;
+  }
+  .card{
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+
+  #list-btn ul{
+    text-align: left;
+  }
+  
+  #list-btn ul>li{
+    margin-top: 0;
+    margin-right: 22px;
+    margin-bottom: 0;
+    font-size: 0.8em;
+  }
+  .card{
+    width: 200px;
+  }
+  .list-card{
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  #list-btn ul{
+    text-align: left;
+  }
+  
+  #list-btn ul>li{
+    margin: 0 auto;
+    font-size: 0.8em;
+  }
+  .card{
+    width: 244px;
+  }
+}
